@@ -5,10 +5,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import br.edu.ifsp.scl.ads.pdm.allan.havagas.databinding.ActivityMainBinding;
 
@@ -29,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         amb.salvarBt.setOnClickListener( view-> {
             Usuario usuario = salvarUsuario();
 
-            Snackbar.make(amb.getRoot(), usuario.toString(), 6000).show();
+            Toast.makeText(this, "Salvando...", Toast.LENGTH_LONG).show();
+
+            Toast.makeText(this, usuario.toString(), Toast.LENGTH_LONG).show();
 
             System.out.println(usuario);
-            Toast.makeText(this, "Salvando...", Toast.LENGTH_LONG).show();
+
         });
 
         amb.celularCb.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) ->{
